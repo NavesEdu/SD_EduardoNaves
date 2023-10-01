@@ -31,6 +31,17 @@ public class NotaCompra {
 	@OneToMany(mappedBy="notaCompra")
 	private List<NotaCompraItem> listaNotaCompraItem;
 	
+
+	public NotaCompra() {
+		super();
+	}
+
+	public NotaCompra(@NotNull @Past LocalDate dataEmissao, Fornecedor fornecedor) {
+		super();
+		this.dataEmissao = dataEmissao;
+		this.fornecedor = fornecedor;
+	}
+
 	//Calcula o total da nota somando os totais de cada item
 	public BigDecimal getCalculoTotalNota() {
 		BigDecimal totalNota = listaNotaCompraItem.stream()

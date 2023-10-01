@@ -83,9 +83,6 @@ class DataLoader {
 
 		notaCompraService.listarNotaCompraItem().forEach( System.out::println );
 		
-		
-
-
 	}
 
 }
